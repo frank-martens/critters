@@ -1,0 +1,34 @@
+// Michael Brooks
+// 09/10/01
+//
+// The Critter abstract class specifies the methods a class must implement
+// to be able to participate in the critter simulation, as well as defines
+// various constants to be used throughout the Critter classes.
+//
+// The getChar method should return a character that will be used for
+// displaying the Critter in the window, and the getMove method should
+// return a legal move given the current surroundings.
+//
+// The move should be specified using the constants of this class
+// {HOP, LEFT, RIGHT, INFECT}.  The four parameters to getMove specify what is
+// surrounding the critter using constants from the CritterModel class {WALL,
+// EMPTY, SAME, OTHER}.
+
+public abstract class Critter
+{
+  // surroundings constants
+  public static final int WALL = 0;
+  public static final int EMPTY = 1;
+  public static final int SAME = 2;
+  public static final int OTHER = 3;
+
+  // move constants
+  public static final int HOP = 0;
+  public static final int LEFT = 1;
+  public static final int RIGHT = 2;
+  public static final int INFECT = 3;
+
+  public abstract char getChar();
+
+  public abstract int getMove(int front, int back, int right, int left);
+}
